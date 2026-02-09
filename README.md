@@ -1,73 +1,164 @@
-# React + TypeScript + Vite
+# Исламский Помощник — 99 Имён Аллаха
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современный **frontend‑проект** для изучения 99 имён Аллаха с акцентом на эстетику, удобство чтения и персональную статистику.
 
-Currently, two official plugins are available:
+Приложение отображает имена Аллаха в виде красивых карточек, позволяет отслеживать просмотры, хранить личные заметки и взаимодействует с собственным backend‑прокси.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌙 О проекте
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Исламский Помощник** — это веб‑приложение, созданное для спокойного и осознанного изучения 99 имён Аллаха:
 
-## Expanding the ESLint configuration
+- минималистичный тёмный дизайн
+- крупные арабские шрифты
+- плавные анимации
+- персональная статистика
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Проект задуман как современный Islamic UI, без перегруженности, с уважением к контенту.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🖼️ Скриншот
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+![Главная страница — тёмная тема](https://via.placeholder.com/1200x600/0a1f14/ffffff?text=Islamic+Helper+—+Dark+Theme)
+
+> ⚠ Замените изображение на реальные скриншоты проекта
+
+---
+
+## ✨ Особенности
+
+- Тёмная исламская эстетика (глубокие зелёные оттенки + золотые акценты)
+- Крупные арабские шрифты: **Amiri**, **Scheherazade New**
+- Glassmorphism‑карточки с hover‑эффектами
+- Плавные анимации (Framer Motion)
+- Адаптивная сетка (1–4 колонки)
+- Статистика просмотров каждого имени
+- Личные заметки пользователя
+- Работа через backend‑прокси (без прямых запросов к внешнему API)
+- Обработка ошибок и уведомления
+
+---
+
+## 🧰 Технологии
+
+- **Framework:** React 18 + Vite
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + custom glassmorphism
+- **Animations:** Framer Motion
+- **Data fetching:** TanStack Query (React Query) + Axios
+- **Notifications:** react-hot-toast
+- **Icons:** lucide-react
+- **Fonts:**
+  - Amiri (Arabic)
+  - Scheherazade New (Arabic)
+  - Inter (Latin)
+
+---
+
+## 🚀 Установка и запуск
+
+### 1. Клонирование репозитория
+
+```bash
+git clone https://github.com/artykowserdar/statistic-test-frontend.git
+cd statistic-test-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Установка зависимостей
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+# или
+yarn install
+# или
+pnpm install
 ```
+
+### 3. Переменные окружения
+
+Создайте файл `.env` в корне проекта:
+
+```env
+VITE_API_URL=http://localhost:8080/api
+```
+
+### 4. Запуск в режиме разработки
+
+```bash
+npm run dev
+```
+
+Приложение будет доступно по адресу:
+
+👉 **http://localhost:5173** (или другой порт Vite)
+
+### 5. Сборка для production
+
+```bash
+npm run build
+```
+
+Собранные файлы появятся в папке `dist/`.
+
+---
+
+## 📁 Структура проекта
+
+```text
+statistic-test-frontend/
+├── public/               # Статические файлы
+├── src/
+│   ├── api/              # Axios + типы API
+│   ├── components/       # UI-компоненты (AllahNameCard, StatsPanel и др.)
+│   ├── hooks/            # React Query hooks
+│   ├── lib/              # Утилиты (cn, helpers)
+│   ├── pages/            # Страницы приложения
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css         # Tailwind + кастомные стили
+├── tailwind.config.js
+├── vite.config.ts
+├── .env.example
+└── README.md
+```
+
+---
+
+## 🖼️ Скриншоты
+
+_(Добавьте реальные скриншоты проекта — через GitHub или imgur)_
+
+- Главная страница
+- Карточка имени Аллаха
+- Панель статистики
+
+---
+
+## 🔌 Backend
+
+Frontend работает совместно с backend‑проектом:
+
+🔗 https://github.com/artyowsardar/statistic_test_project
+
+Backend предоставляет:
+
+- проксирование запросов к внешнему API
+- хранение статистики просмотров
+- пользовательские заметки
+- PostgreSQL + FastAPI
+
+---
+
+## 📄 Лицензия
+
+MIT License
+
+---
+
+## 👤 Автор
+
+**artyowsardar**  
+Февраль 2026
+

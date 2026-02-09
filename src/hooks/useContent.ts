@@ -1,7 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import api from '../api/api'
 
-// ← Вот здесь добавляем type перед импортом типов
 import type { StatResponse, NoteUpdate } from '../api/types'
 
 export const useContentStat = (type: string, id: string) => {

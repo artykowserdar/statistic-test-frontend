@@ -1,12 +1,9 @@
-/* Сначала все @import */
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Затем Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Твои кастомные стили идут после */
 :root {
   --bg-dark: #0a1f14;
   --bg-gradient: linear-gradient(135deg, #0a1f14 0%, #11251a 100%);
@@ -29,7 +26,6 @@ body {
   font-family: 'Amiri', 'Scheherazade New', serif;
 }
 
-/* Остальные твои классы glass-card, hover-glow и т.д. */
 .glass-card {
   background: var(--card-bg);
   backdrop-filter: blur(16px);

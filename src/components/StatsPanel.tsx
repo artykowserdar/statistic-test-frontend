@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion' // ← добавим анимации
-import { BookOpen, Clock, Edit, Save, AlertCircle } from 'lucide-react' // иконки
+import { motion } from 'framer-motion'
+import { BookOpen, Clock, Edit, Save, AlertCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { useContentStat, useUpdateNote } from '../hooks/useContent'
 import { cn } from '@/lib/utils'
