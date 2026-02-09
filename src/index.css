@@ -1,0 +1,51 @@
+/* Сначала все @import */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Затем Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Твои кастомные стили идут после */
+:root {
+  --bg-dark: #0a1f14;
+  --bg-gradient: linear-gradient(135deg, #0a1f14 0%, #11251a 100%);
+  --card-bg: rgba(26, 60, 47, 0.35);
+  --card-border: rgba(46, 107, 79, 0.3);
+  --gold: #d4af37;
+  --text-light: #e0e0e0;
+  --text-muted: #a0a0a0;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-light);
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-attachment: fixed;
+}
+
+.font-arabic {
+  font-family: 'Amiri', 'Scheherazade New', serif;
+}
+
+/* Остальные твои классы glass-card, hover-glow и т.д. */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(26, 60, 47, 0.5);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.arabic-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
